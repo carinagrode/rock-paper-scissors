@@ -40,11 +40,11 @@ function playRound() {
     let userChoice = getUserChoice();
 
     if (computerChoice === 'rock' && userChoice === 'rock') {
-        alert(`You both chose rock. Undecided! Score: ${userScore} : ${computerScore}`);
+        alert(`You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`);
     } else if (computerChoice === 'paper' && userChoice === 'paper') {
-        alert(`You both chose paper. Undecided! Score: ${userScore} : ${computerScore}`);
+        alert(`You both chose paper. It's a tie! Score: ${userScore} : ${computerScore}`);
     } else if (computerChoice === 'scissors' && userChoice === 'scissors') {
-        alert(`You both chose scissors. Undecided! Score: ${userScore} : ${computerScore}`);
+        alert(`You both chose scissors. It's a tie! Score: ${userScore} : ${computerScore}`);
     } else if (computerChoice === 'rock' && userChoice === 'scissors') {
         computerScore++;
         alert(`You chose scissors, the computer chose rock. You lose! Score: ${userScore} : ${computerScore}`);
