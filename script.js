@@ -1,5 +1,6 @@
 // Computer chooses randomly between rock, paper, scissors
 function getComputerChoice() {
+
     let randomNumber = Math.floor(Math.random() * 3);
     let randomChoice;
     
@@ -16,7 +17,9 @@ function getComputerChoice() {
 
 // Ask user for choice: rock, paper or scissors
 // Make the choice case-insensitive, so you can enter rock, Rock or ROCK
+// If user chooses something else: ask again
 function getUserChoice() {
+
     let enteredUserChoice = prompt('Choose wisely: rock, paper or scissors?');
     let lowerCaseUserChoice = enteredUserChoice.toLowerCase();
 
@@ -29,9 +32,9 @@ function getUserChoice() {
     }
 }
 
+// Compare the computerChoice with the userChoice
+// Display the result and the current score
 function playRound() {
-    // Compare the computerChoice with the userChoice
-    // Display the result
 
     let computerChoice = getComputerChoice();
     let userChoice = getUserChoice();
@@ -65,6 +68,8 @@ function playRound() {
     }
 }
 
+// Play game until final score is reached
+// Display overall winner of the game
 function playGame(finalScore) {
 
     while (computerScore < finalScore && userScore < finalScore) {
@@ -79,8 +84,10 @@ function playGame(finalScore) {
     
 }
 
+// Set the game's end: Ask the user for a final score
 let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
 
+// Set both scores to 0 for the start
 let computerScore = 0;
 let userScore = 0;
 
