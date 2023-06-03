@@ -70,30 +70,29 @@ function playRound() {
 
 // Play game until final score is reached
 // Display overall winner of the game
-function playGame(finalScore) {
+// function playGame(finalScore) {
 
-    while (computerScore < finalScore && userScore < finalScore) {
-        playRound();
-    }
+//     while (computerScore < finalScore && userScore < finalScore) {
+//         playRound();
+//     }
 
-    if (computerScore === finalScore) {
-        alert(`You lose! The computer has first reached ${finalScore} points!`);
-    } else {
-        alert(`You win! You have first reached ${finalScore} points!`);
-    }
+//     if (computerScore === finalScore) {
+//         alert(`You lose! The computer has first reached ${finalScore} points!`);
+//     } else {
+//         alert(`You win! You have first reached ${finalScore} points!`);
+//     }
     
-}
+// }
 
 // Set the game's end: Ask the user for a final score
 // let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
-let finalScore = 1;
 
 // Set both scores to 0 for the start
-let computerScore = 0;
-let userScore = 0;
+// let computerScore = 0;
+// let userScore = 0;
 
 
-playGame(finalScore);
+// playGame(finalScore);
 
 
 
