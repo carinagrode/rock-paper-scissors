@@ -85,7 +85,8 @@ function playGame(finalScore) {
 }
 
 // Set the game's end: Ask the user for a final score
-let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
+// let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
+let finalScore = 1;
 
 // Set both scores to 0 for the start
 let computerScore = 0;
