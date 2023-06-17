@@ -9,39 +9,44 @@ function playRound(userChoice) {
 
     const computerChoice = getComputerChoice();
 
+    const bodyContent = document.querySelector('body');
+    const result = document.createElement('p');
+
     if (computerChoice === 'rock' && userChoice === 'rock') {
-        alert(`You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'paper') {
-        alert(`You both chose paper. It's a tie! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You both chose paper. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'scissors') {
-        alert(`You both chose scissors. It's a tie! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You both chose scissors. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'scissors') {
         computerScore++;
-        alert(`You chose scissors, the computer chose rock. You lose! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You chose scissors, the computer chose rock. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'paper') {
         userScore++;
-        alert(`You chose paper, the computer chose rock. You win! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You chose paper, the computer chose rock. You win! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'rock') {
         userScore++;
-        alert(`You chose rock, the computer chose scissors. You win! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You chose rock, the computer chose scissors. You win! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'paper') {
         computerScore++;
-        alert(`You chose paper, the computer chose scissors. You lose! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You chose paper, the computer chose scissors. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'rock') {
         computerScore++;
-        alert(`You chose rock, the computer chose paper. You lose! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You chose rock, the computer chose paper. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'scissors') {
         userScore++;
-        alert(`You chose scissors, the computer chose paper. You win! Score: ${userScore} : ${computerScore}`);
+        result.textContent = `You chose scissors, the computer chose paper. You win! Score: ${userScore} : ${computerScore}`;
     } else {
-        alert(`Something went wrong. Refresh and try again!`);
+        result.textContent = `Something went wrong. Refresh and try again!`;
     }
 
     if (computerScore === finalScore) {
-        alert(`You lose! The computer has first reached ${finalScore} points!`);
+        result.textContent = `You lose! The computer has first reached ${finalScore} points!`;
     } else if (userScore === finalScore) {
-        alert(`You win! You have first reached ${finalScore} points!`);
+        result.textContent = `You win! You have first reached ${finalScore} points!`;
     }
+
+    bodyContent.appendChild(result);
 }
 
 // Play game until final score is reached
