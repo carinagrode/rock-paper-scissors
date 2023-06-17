@@ -1,13 +1,39 @@
+// Computer chooses randomly between rock, paper, scissors
 function getComputerChoice() {
-    const choice = ['rock', 'paper', 'scissors'];
-    return choice[Math.floor(Math.random()*3)];
+
+    let randomNumber = Math.floor(Math.random() * 3);
+    let randomChoice;
+    
+    if (randomNumber === 0) {
+        randomChoice = 'rock';
+    } else if (randomNumber === 1) {
+        randomChoice = 'paper';
+    } else {
+        randomChoice = 'scissors';
+    }
+
+    return randomChoice;
 }
 
-// Compare the computer choice with the user choice
-// Display the result
-function playRound(userChoice) {
+// Ask user for choice with 3 buttons: rock, paper or scissors
+function getUserChoice() {
 
-    const computerChoice = getComputerChoice();
+    const userChoiceRock = document.getElementById('rock');
+    userChoiceRock.addEventListener('click', () => playRound('rock', userScore, computerScore));
+
+    const userChoicePaper = document.getElementById('paper');
+    userChoicePaper.addEventListener('click', () => playRound('paper', userScore, computerScore));
+
+    const userChoiceScissors = document.getElementById('scissors');
+    userChoiceScissors.addEventListener('click', () => playRound('scissors', userScore, computerScore));
+}
+
+// Compare the computerChoice with the userChoice
+// Display the result
+function playRound(userChoice, userScore, computerScore) {
+
+    let computerChoice = getComputerChoice();
+    // let userChoice = getUserChoice();
 
     if (computerChoice === 'rock' && userChoice === 'rock') {
         alert(`You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`);
@@ -39,19 +65,19 @@ function playRound(userChoice) {
 
     if (computerScore === finalScore) {
         alert(`You lose! The computer has first reached ${finalScore} points!`);
-    } else if (userScore === finalScore) {
+    } else {
         alert(`You win! You have first reached ${finalScore} points!`);
     }
 }
 
 // Play game until final score is reached
 // Display overall winner of the game
-// function playGame(finalScore) {
+function playGame(finalScore) {
+    playRound(finalScore, userScore, computerScore);    
+}
 
-
-
-// // Set the game's end: Ask the user for a final score
-// // let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
+// Set the game's end: Ask the user for a final score
+// let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
 let finalScore = 3;
 
 // Set both scores to 0 for the start
@@ -59,62 +85,4 @@ let computerScore = 0;
 let userScore = 0;
 
 
-
-
-
-
-
-// function playGame() {
-//     getUserChoice();
-// }
-
-
-// Ask user for choice with 3 buttons: rock, paper or scissors
-// Play one round with it
-
-const rock = document.getElementById('rock');
-rock.addEventListener('click', 
-    () => {
-    playRound('rock');
-    }
-);
-
-const paper = document.getElementById('paper');
-paper.addEventListener('click', 
-    () => {
-    playRound('paper');
-    }
-);
-
-const scissors = document.getElementById('scissors');
-scissors.addEventListener('click', 
-    () => {
-    playRound('scissors');
-    }
-);   
-
-
-
-
-
-
-
-// playGame();
-
-
-
-
-
-
-// if (computerChoice === userChoice) {
-//     showResult();
-// } else {
-//     alert('else');
-// }
-
-// function showResult() {
-//     const bodyContent = document.querySelector('body');
-//     const result = document.createElement('p');
-//     result.textContent = 'Hier steht das Ergebnis!';
-//     bodyContent.appendChild(result);
-// }
+playGame(finalScore);
