@@ -9,8 +9,15 @@ function playRound(userChoice) {
 
     const computerChoice = getComputerChoice();
 
-    const bodyContent = document.querySelector('body');
-    const result = document.createElement('p');
+    const result = document.getElementById('result');
+
+    //     const bodyContent = document.querySelector('body');
+//     const result = document.createElement('p');
+//     result.textContent = 'Hier steht das Ergebnis!';
+//     bodyContent.appendChild(result);
+
+zwei neue ps appenden!
+
 
     if (computerChoice === 'rock' && userChoice === 'rock') {
         result.textContent = `You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`;
@@ -45,8 +52,6 @@ function playRound(userChoice) {
     } else if (userScore === finalScore) {
         result.textContent = `You win! You have first reached ${finalScore} points!`;
     }
-
-    bodyContent.appendChild(result);
 }
 
 // Play game until final score is reached
@@ -57,7 +62,7 @@ function playRound(userChoice) {
 
 // // Set the game's end: Ask the user for a final score
 // // let finalScore = parseInt(prompt('Welcome to Rock, Paper, Scissors! Choose a final score between 1 and 5.'));
-let finalScore = 3;
+let finalScore = 5;
 
 // Set both scores to 0 for the start
 let computerScore = 0;
