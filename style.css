@@ -1,15 +1,31 @@
+img {
+    width: 200px;
+}
+
 .user-button {
     cursor: pointer;
 }
 
 #buttons {
     display: flex;
-    gap: 50px;
-
 }
 
 #buttons-user,
 #buttons-computer {
     display:flex;
     flex-direction: column;
+    border: 1px dotted rgb(212, 209, 209); 
+    text-align: center;
+    width: 250px;
+    padding: 20px;
+}
+
+#result {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
 }
