@@ -16,7 +16,7 @@ function playRound(userChoice) {
 //     result.textContent = 'Hier steht das Ergebnis!';
 //     bodyContent.appendChild(result);
 
-zwei neue ps appenden!
+// zwei neue ps appenden!
 
 
     if (computerChoice === 'rock' && userChoice === 'rock') {
