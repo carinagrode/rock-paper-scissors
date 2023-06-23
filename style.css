@@ -1,3 +1,15 @@
-img {
-    border: 2px solid red;
+.user-button {
+    cursor: pointer;
+}
+
+#buttons {
+    display: flex;
+    gap: 50px;
+
+}
+
+#buttons-user,
+#buttons-computer {
+    display:flex;
+    flex-direction: column;
 }
