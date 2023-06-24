@@ -3,6 +3,15 @@ function getComputerChoice() {
     return choice[Math.floor(Math.random()*3)];
 }
 
+function setButtonsToDefault() {
+    userRock.setAttribute('src', 'img/rock.jpg');
+    userPaper.setAttribute('src', 'img/paper.jpg');
+    userScissors.setAttribute('src', 'img/scissors.jpg');
+    computerRock.setAttribute('src', 'img/rock.jpg');
+    computerPaper.setAttribute('src', 'img/paper.jpg');
+    computerScissors.setAttribute('src', 'img/scissors.jpg');
+}
+
 // Compare the computer choice with the user choice
 // Display the result
 function playRound(userChoice) {
@@ -16,54 +25,55 @@ function playRound(userChoice) {
 //     result.textContent = 'Hier steht das Ergebnis!';
 //     bodyContent.appendChild(result);
 
-
-function setButtonsToDefault() {
-    userRock.setAttribute('src', 'img/rock.jpg');
-    userPaper.setAttribute('src', 'img/paper.jpg');
-    userScissors.setAttribute('src', 'img/scissors.jpg');
-}
-
-
     if (computerChoice === 'rock' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
+        computerRock.setAttribute('src', 'img/rock-active.jpg');
         result.textContent = `You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
+        computerPaper.setAttribute('src', 'img/paper-active.jpg');
         result.textContent = `You both chose paper. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
+        computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         result.textContent = `You both chose scissors. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
+        computerRock.setAttribute('src', 'img/rock-active.jpg');
         computerScore++;
         result.textContent = `You chose scissors, the computer chose rock. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
+        computerRock.setAttribute('src', 'img/rock-active.jpg');
         userScore++;
         result.textContent = `You chose paper, the computer chose rock. You win! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
+        computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         userScore++;
         result.textContent = `You chose rock, the computer chose scissors. You win! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
+        computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerScore++;
         result.textContent = `You chose paper, the computer chose scissors. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
+        computerPaper.setAttribute('src', 'img/paper-active.jpg');
         computerScore++;
         result.textContent = `You chose rock, the computer chose paper. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
+        computerPaper.setAttribute('src', 'img/paper-active.jpg');
         userScore++;
         result.textContent = `You chose scissors, the computer chose paper. You win! Score: ${userScore} : ${computerScore}`;
     } else {
@@ -127,7 +137,9 @@ userScissors.addEventListener('click',
 );   
 
 
-
+const computerRock = document.getElementById('computer-rock');
+const computerPaper = document.getElementById('computer-paper');
+const computerScissors = document.getElementById('computer-scissors');
 
 
 
