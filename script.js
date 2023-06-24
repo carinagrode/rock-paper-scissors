@@ -19,6 +19,7 @@ function playRound(userChoice) {
     const computerChoice = getComputerChoice();
 
     const result = document.getElementById('result');
+    const score = document.getElementById('score');
 
     //     const bodyContent = document.querySelector('body');
 //     const result = document.createElement('p');
@@ -29,61 +30,70 @@ function playRound(userChoice) {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
         computerRock.setAttribute('src', 'img/rock-active.jpg');
-        result.textContent = `You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `It's a tie!`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerPaper.setAttribute('src', 'img/paper-active.jpg');
-        result.textContent = `You both chose paper. It's a tie! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `It's a tie!`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerScissors.setAttribute('src', 'img/scissors-active.jpg');
-        result.textContent = `You both chose scissors. It's a tie! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `It's a tie!`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerRock.setAttribute('src', 'img/rock-active.jpg');
         computerScore++;
-        result.textContent = `You chose scissors, the computer chose rock. You lose! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `You lose :(`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerRock.setAttribute('src', 'img/rock-active.jpg');
         userScore++;
-        result.textContent = `You chose paper, the computer chose rock. You win! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `You win!`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
         computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         userScore++;
-        result.textContent = `You chose rock, the computer chose scissors. You win! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `You win!`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerScore++;
-        result.textContent = `You chose paper, the computer chose scissors. You lose! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `You lose :(`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
         computerPaper.setAttribute('src', 'img/paper-active.jpg');
         computerScore++;
-        result.textContent = `You chose rock, the computer chose paper. You lose! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `You lose :(`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerPaper.setAttribute('src', 'img/paper-active.jpg');
         userScore++;
-        result.textContent = `You chose scissors, the computer chose paper. You win! Score: ${userScore} : ${computerScore}`;
+        result.textContent = `You win!`;
+        score.textContent = `Score: ${userScore} : ${computerScore}`;
     } else {
         result.textContent = `Something went wrong. Refresh and try again!`;
     }
 
     if (computerScore === finalScore) {
-        result.textContent = `You lose! The computer has first reached ${finalScore} points!`;
+        score.textContent = `You lose! The computer has first reached ${finalScore} points!`;
     } else if (userScore === finalScore) {
-        result.textContent = `You win! You have first reached ${finalScore} points!`;
+        score.textContent = `You win! You have first reached ${finalScore} points!`;
     }
 }
 
