@@ -16,31 +16,54 @@ function playRound(userChoice) {
 //     result.textContent = 'Hier steht das Ergebnis!';
 //     bodyContent.appendChild(result);
 
-// zwei neue ps appenden!
+
+function setButtonsToDefault() {
+    userRock.setAttribute('src', 'img/rock.jpg');
+    userPaper.setAttribute('src', 'img/paper.jpg');
+    userScissors.setAttribute('src', 'img/scissors.jpg');
+}
 
 
     if (computerChoice === 'rock' && userChoice === 'rock') {
+        setButtonsToDefault();
+        userRock.setAttribute('src', 'img/rock-active.jpg');
         result.textContent = `You both chose rock. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'paper') {
+        setButtonsToDefault();
+        userPaper.setAttribute('src', 'img/paper-active.jpg');
         result.textContent = `You both chose paper. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'scissors') {
+        setButtonsToDefault();
+        userScissors.setAttribute('src', 'img/scissors-active.jpg');
         result.textContent = `You both chose scissors. It's a tie! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'scissors') {
+        setButtonsToDefault();
+        userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerScore++;
         result.textContent = `You chose scissors, the computer chose rock. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'rock' && userChoice === 'paper') {
+        setButtonsToDefault();
+        userPaper.setAttribute('src', 'img/paper-active.jpg');
         userScore++;
         result.textContent = `You chose paper, the computer chose rock. You win! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'rock') {
+        setButtonsToDefault();
+        userRock.setAttribute('src', 'img/rock-active.jpg');
         userScore++;
         result.textContent = `You chose rock, the computer chose scissors. You win! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'scissors' && userChoice === 'paper') {
+        setButtonsToDefault();
+        userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerScore++;
         result.textContent = `You chose paper, the computer chose scissors. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'rock') {
+        setButtonsToDefault();
+        userRock.setAttribute('src', 'img/rock-active.jpg');
         computerScore++;
         result.textContent = `You chose rock, the computer chose paper. You lose! Score: ${userScore} : ${computerScore}`;
     } else if (computerChoice === 'paper' && userChoice === 'scissors') {
+        setButtonsToDefault();
+        userScissors.setAttribute('src', 'img/scissors-active.jpg');
         userScore++;
         result.textContent = `You chose scissors, the computer chose paper. You win! Score: ${userScore} : ${computerScore}`;
     } else {
@@ -82,22 +105,22 @@ let userScore = 0;
 // Ask user for choice with 3 buttons: rock, paper or scissors
 // Play one round with it
 
-const rock = document.getElementById('rock');
-rock.addEventListener('click', 
+const userRock = document.getElementById('user-rock');
+userRock.addEventListener('click', 
     () => {
     playRound('rock');
     }
 );
 
-const paper = document.getElementById('paper');
-paper.addEventListener('click', 
+const userPaper = document.getElementById('user-paper');
+userPaper.addEventListener('click', 
     () => {
     playRound('paper');
     }
 );
 
-const scissors = document.getElementById('scissors');
-scissors.addEventListener('click', 
+const userScissors = document.getElementById('user-scissors');
+userScissors.addEventListener('click', 
     () => {
     playRound('scissors');
     }
