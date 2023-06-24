@@ -3,15 +3,6 @@ function getComputerChoice() {
     return choice[Math.floor(Math.random()*3)];
 }
 
-function setButtonsToDefault() {
-    userRock.setAttribute('src', 'img/rock.jpg');
-    userPaper.setAttribute('src', 'img/paper.jpg');
-    userScissors.setAttribute('src', 'img/scissors.jpg');
-    computerRock.setAttribute('src', 'img/rock.jpg');
-    computerPaper.setAttribute('src', 'img/paper.jpg');
-    computerScissors.setAttribute('src', 'img/scissors.jpg');
-}
-
 function playRound(userChoice) {
 
     const computerChoice = getComputerChoice();
@@ -85,16 +76,20 @@ function playRound(userChoice) {
     }
 }
 
+function setButtonsToDefault() {
+    userRock.setAttribute('src', 'img/rock.jpg');
+    userPaper.setAttribute('src', 'img/paper.jpg');
+    userScissors.setAttribute('src', 'img/scissors.jpg');
+    computerRock.setAttribute('src', 'img/rock.jpg');
+    computerPaper.setAttribute('src', 'img/paper.jpg');
+    computerScissors.setAttribute('src', 'img/scissors.jpg');
+}
+
 
 const finalScore = 5;
-
 let computerScore = 0;
 let userScore = 0;
 
-
-
-// Ask user for choice with 3 buttons: rock, paper or scissors
-// Play one round with it
 
 const userRock = document.getElementById('user-rock');
 userRock.addEventListener('click', 
