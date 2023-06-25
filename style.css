@@ -28,6 +28,11 @@ h1 {
     cursor: pointer;
 }
 
+.user-button:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+  }
+
 #buttons {
     display: flex;
 }
