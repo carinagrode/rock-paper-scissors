@@ -7,60 +7,57 @@ function playRound(userChoice) {
 
     const computerChoice = getComputerChoice();
 
-    const score = document.getElementById('score');
-
-
     if (computerChoice === 'rock' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
         computerRock.setAttribute('src', 'img/rock-active.jpg');
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'paper' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerPaper.setAttribute('src', 'img/paper-active.jpg');
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'scissors' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerScissors.setAttribute('src', 'img/scissors-active.jpg');
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'rock' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerRock.setAttribute('src', 'img/rock-active.jpg');
         computerScore++;
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'rock' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerRock.setAttribute('src', 'img/rock-active.jpg');
         userScore++;
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'scissors' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
         computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         userScore++;
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'scissors' && userChoice === 'paper') {
         setButtonsToDefault();
         userPaper.setAttribute('src', 'img/paper-active.jpg');
         computerScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerScore++;
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'paper' && userChoice === 'rock') {
         setButtonsToDefault();
         userRock.setAttribute('src', 'img/rock-active.jpg');
         computerPaper.setAttribute('src', 'img/paper-active.jpg');
         computerScore++;
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else if (computerChoice === 'paper' && userChoice === 'scissors') {
         setButtonsToDefault();
         userScissors.setAttribute('src', 'img/scissors-active.jpg');
         computerPaper.setAttribute('src', 'img/paper-active.jpg');
         userScore++;
-        score.textContent = `${userScore} : ${computerScore}`;
+        updateScore();
     } else {
         score.textContent = `Something went wrong. Refresh and try again!`;
     }
@@ -85,10 +82,22 @@ function setButtonsToDefault() {
     computerScissors.setAttribute('src', 'img/scissors.jpg');
 }
 
+function updateScore() {
+    score.textContent = `${userScore} : ${computerScore}`;
+    score.style.transform = 'scale(2.5)';
+    score.style.transition = 'all 0.5s';
+    setTimeout(() => {
+        score.style.transform = 'scale(1)';
+        score.style.transition = 'all 0.5s';
+    }, 500);
+}
+
 
 const finalScore = 5;
 let computerScore = 0;
 let userScore = 0;
+
+const score = document.getElementById('score');
 
 
 const userRock = document.getElementById('user-rock');
